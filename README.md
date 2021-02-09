@@ -1,5 +1,12 @@
 # imooc-vikingship-ui
 
+## react-with-ts
+
+```bash
+# 构建项目
+npx create-react-app react-with-ts --typescript
+```
+
 ## 写在最后
 
 > [React+TypeScript 高仿 AntDesign 开发企业级 UI 组件库](https://coding.imooc.com/class/428.html)
