@@ -5,6 +5,7 @@
 ```bash
 # 构建项目
 npx create-react-app react-with-ts --typescript
+npx create-react-app react-with-ts --template typescript
 ```
 
 ## 写在最后
