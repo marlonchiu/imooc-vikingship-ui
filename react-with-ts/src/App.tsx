@@ -38,22 +38,22 @@ function App() {
         <p>
           <button onClick={() => {setShow(!show)}}>toggle show</button>
         </p>
-        {
+        {/* {
           loading ? <p>狗狗数据读取中</p>
             : <img src={dogResult?.message} alt=""/>
-        }
+        } */}
         {/* <WrapperDogShow /> */}
-        <Hello message="Hello World!" />
+        {/* <Hello message="Hello World!" /> */}
         <LikeButton />
         { show && <MouseTracker /> }
-        <a
+        {/* <a
           className="App-link"
           href="https://reactjs.org"
           target="_blank"
           rel="noopener noreferrer"
         >
           Learn React
-        </a>
+        </a> */}
       </header>
     </div>
   );
