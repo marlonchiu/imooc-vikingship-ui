@@ -1,5 +1,6 @@
-import React, { FC, useState, useEffect, useRef } from 'react'
+import React, { FC, useState, useEffect, useRef, useContext } from 'react'
 import useMousePosition from '../hooks/useMousePosition'
+import { ThemeContext } from '../App'
 
 const LikeButton: FC = () => {
   const [like, setLike] = useState(0)
@@ -8,6 +9,12 @@ const LikeButton: FC = () => {
   const likeRef = useRef(0)
   const didMountRef = useRef(false)
   const domRef = useRef<HTMLInputElement>(null)
+  const theme = useContext(ThemeContext)
+  console.log(theme)
+  const style = {
+    background: theme.background,
+    color: theme.color,
+  }
 
   useEffect(() => {
     console.log('document title effect is running')
@@ -38,8 +45,8 @@ const LikeButton: FC = () => {
     <>
       <input type="text" ref={domRef} />
       <h2>X: {positions.x}, Y : {positions.y}</h2>
-      <button onClick={() => { setLike(like + 1); likeRef.current ++ }}>
-        { like } 赞
+      <button style={style} onClick={() => { setLike(like + 1); likeRef.current ++ }}>
+        { like } 👍赞
       </button>
       <button onClick={() => { setOn(!on) }}>
         { on ? 'ON' : 'OFF' }

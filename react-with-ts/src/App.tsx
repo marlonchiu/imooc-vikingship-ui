@@ -13,6 +13,21 @@ interface ImageShowResult {
   status: string;
 }
 
+interface IThemeProps {
+  [key: string]: {color: string; background: string;}
+}
+const themes: IThemeProps = {
+  'light': {
+    color: '#000',
+    background: '#eee',
+  },
+  'dark': {
+    color: '#fff',
+    background: '#222',
+  }
+}
+export const ThemeContext = React.createContext(themes.light)
+
 // const DogShow: React.FC<{ data: ImageShowResult }> = ({ data }) => {
 //   return (
 //     <>
@@ -32,6 +47,7 @@ function App() {
 
   return (
     <div className="App">
+      <ThemeContext.Provider value={themes.dark}>
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         {/* <p>X: {positions.x}, Y : {positions.y}</p> */}
@@ -43,7 +59,7 @@ function App() {
             : <img src={dogResult?.message} alt=""/>
         } */}
         {/* <WrapperDogShow /> */}
-        {/* <Hello message="Hello World!" /> */}
+        <Hello message="Hello World!" />
         <LikeButton />
         { show && <MouseTracker /> }
         {/* <a
@@ -54,7 +70,8 @@ function App() {
         >
           Learn React
         </a> */}
-      </header>
+        </header>
+      </ThemeContext.Provider>
     </div>
   );
 }
