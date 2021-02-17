@@ -4,9 +4,17 @@
 
 ```bash
 # 构建项目
-npx create-react-app react-with-ts --typescript
 npx create-react-app react-with-ts --template typescript
 ```
+
+- Hook 规则
+
+  - 只在最顶层使用 Hook
+  - 只在 React 函数中调用 Hook
+
+- 其他 Hook
+  - [Hook API 索引](https://zh-hans.reactjs.org/docs/hooks-reference.html)
+  - [usehooks 实例开发](https://usehooks.com/)
 
 ## 写在最后
 
