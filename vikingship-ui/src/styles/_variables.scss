@@ -205,3 +205,20 @@ $btn-border-radius-sm: $border-radius-sm !default;
 
 $btn-transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out,
   box-shadow 0.15s ease-in-out !default;
+
+// !! alert
+$alert-border-radius: 0.4rem !default;
+$alert-padding-y: 0.375rem !default;
+$alert-padding-x: 0.75rem !default;
+
+$alert-width: 30rem;
+$alert-line-height: $line-height-lg;
+
+$alert-title-font-size: $font-size-base * 1.2 !default;
+$alert-message-font-size: $font-size-base !default;
+
+$alert-icon-right: 1rem;
+$alert-icon-top: 0.5rem;
+
+$alert-icon-font-weight: $font-weight-normal;
+$alert-icon-font-size: $sub-sup-font-size;
