@@ -77,3 +77,93 @@ $link-hover-decoration: underline !default;
 $body-bg: $white !default;
 $body-color: $gray-900 !default;
 $body-text-align: null !default;
+
+// Spacing
+$spacer: 1rem !default;
+
+$headings-margin-bottom: $spacer / 2 !default;
+$headings-font-family: null !default;
+$headings-font-style: null !default;
+$headings-font-weight: 500 !default;
+$headings-line-height: 1.2 !default;
+$headings-color: null !default;
+
+// Paragraphs
+$paragraph-margin-bottom: 1rem !default;
+
+// 字体其他部分 heading list hr 等等
+$headings-margin-bottom: $spacer / 2 !default;
+$headings-font-family: null !default;
+$headings-font-style: null !default;
+$headings-font-weight: 500 !default;
+$headings-line-height: 1.2 !default;
+$headings-color: null !default;
+
+$display1-size: 6rem !default;
+$display2-size: 5.5rem !default;
+$display3-size: 4.5rem !default;
+$display4-size: 3.5rem !default;
+
+$display1-weight: 300 !default;
+$display2-weight: 300 !default;
+$display3-weight: 300 !default;
+$display4-weight: 300 !default;
+$display-line-height: $headings-line-height !default;
+
+$lead-font-size: $font-size-base * 1.25 !default;
+$lead-font-weight: 300 !default;
+
+$small-font-size: 0.875em !default;
+
+$sub-sup-font-size: 0.75em !default;
+
+$text-muted: $gray-600 !default;
+
+$initialism-font-size: $small-font-size !default;
+
+$blockquote-small-color: $gray-600 !default;
+$blockquote-small-font-size: $small-font-size !default;
+$blockquote-font-size: $font-size-base * 1.25 !default;
+
+$hr-color: inherit !default;
+$hr-height: 1px !default;
+$hr-opacity: 0.25 !default;
+
+$legend-margin-bottom: 0.5rem !default;
+$legend-font-size: 1.5rem !default;
+$legend-font-weight: null !default;
+
+$mark-padding: 0.2em !default;
+
+$dt-font-weight: $font-weight-bold !default;
+
+$nested-kbd-font-weight: $font-weight-bold !default;
+
+$list-inline-padding: 0.5rem !default;
+
+$mark-bg: #fcf8e3 !default;
+
+$hr-margin-y: $spacer !default;
+
+// Code
+$code-font-size: $small-font-size !default;
+$code-color: $pink !default;
+$pre-color: null !default;
+
+// options 可配置选项
+$enable-pointer-cursor-for-buttons: true !default;
+
+// 边框 和 border radius
+
+$border-width: 1px !default;
+$border-color: $gray-300 !default;
+
+$border-radius: 0.25rem !default;
+$border-radius-lg: 0.3rem !default;
+$border-radius-sm: 0.2rem !default;
+
+// 不同类型的 box shadow
+$box-shadow-sm: 0 0.125rem 0.25rem rgba($black, 0.075) !default;
+$box-shadow: 0 0.5rem 1rem rgba($black, 0.15) !default;
+$box-shadow-lg: 0 1rem 3rem rgba($black, 0.175) !default;
+$box-shadow-inset: inset 0 1px 2px rgba($black, 0.075) !default;

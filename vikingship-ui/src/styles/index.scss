@@ -1,4 +1,8 @@
 // config
-@import './variables'; // 导入不需要 _,也不需要后缀名
+@import 'variables'; // 导入不需要 _,也不需要后缀名
 
-@import './mixins'; // 复用方法
+//layout
+@import 'reboot';
+
+//mixin
+@import 'mixin';
