@@ -5,6 +5,8 @@
 > [JEST 测试框架](https://jestjs.io/)
 >
 > [Test Utilities](https://zh-hans.reactjs.org/docs/test-utils.html)
+>
+> [testing-library/jest-dom](https://github.com/testing-library/jest-dom)
 
 - 测试尝试
 
