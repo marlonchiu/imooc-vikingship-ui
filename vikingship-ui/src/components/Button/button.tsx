@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { FC, ButtonHTMLAttributes, AnchorHTMLAttributes } from 'react'
 import classNames from 'classnames'
 
 export enum ButtonSize {
@@ -25,8 +25,19 @@ interface BaseButtonProps {
   href?: string;
 }
 
-const Button: React.FC<BaseButtonProps> = (props) => {
-  const { btnType, disabled, size, children, className, href } = props
+type NativeButtonProps = BaseButtonProps & ButtonHTMLAttributes<HTMLElement>
+type AnchorButtonProps = BaseButtonProps & AnchorHTMLAttributes<HTMLElement>
+export type ButtonProps = Partial<NativeButtonProps & AnchorButtonProps>
+/**
+ * 页面中最常用的的按钮元素，适合于完成特定的交互
+ * ### 引用方法
+ *
+ * ~~~js
+ * import { Button } from 'vikingship'
+ * ~~~
+ */
+const Button: FC<ButtonProps> = (props) => {
+  const { btnType, disabled, size, children, className, href, ...restProps } = props
   // btn, btn-lg, btn-primary
   const classes = classNames('btn', className, {
     [`btn-${btnType}`]: btnType,
@@ -39,6 +50,7 @@ const Button: React.FC<BaseButtonProps> = (props) => {
       <a
         className={classes}
         href={href}
+        {...restProps}
       >
         {children}
       </a>
@@ -48,6 +60,7 @@ const Button: React.FC<BaseButtonProps> = (props) => {
       <button
         className={classes}
         disabled={disabled}
+        {...restProps}
       >
         {children}
       </button>
