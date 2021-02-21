@@ -1,5 +1,5 @@
 import React from 'react'
-import { render, fireEvent, wait } from '@testing-library/react'
+import { render, fireEvent, waitFor } from '@testing-library/react'
 import Alert, { BaseAlertProps, AlertType } from './alert'
 
 
@@ -32,11 +32,11 @@ describe('test Alert component', () => {
     expect(titleElement).toHaveClass('alert-title')
     expect(titleElement.parentNode).toBe(element.parentNode)
 
-    // const iconElement = wrapper.getByText('关闭')
-    // fireEvent.click(iconElement)
-    // await wait(() => {
-    //   expect(element).not.toBeInTheDocument()
-    // })
+    const iconElement = wrapper.getByText('关闭')
+    fireEvent.click(iconElement)
+    await waitFor(() => {
+      expect(element).not.toBeInTheDocument()
+    })
   })
 
   it('should render the correct component based on different props', async () => {
@@ -48,11 +48,11 @@ describe('test Alert component', () => {
     expect(element).toHaveClass('alert-message')
     expect(element.parentNode).toHaveClass('alert alert-success')
 
-    // const iconElement = wrapper.getByText('关闭')
-    // expect(iconElement).toBeInTheDocument()
-    // fireEvent.click(iconElement)
-    // await wait(() => {
-    //   expect(element).not.toBeInTheDocument()
-    // })
+    const iconElement = wrapper.getByText('关闭')
+    expect(iconElement).toBeInTheDocument()
+    fireEvent.click(iconElement)
+    await waitFor(() => {
+      expect(element).not.toBeInTheDocument()
+    })
   })
 })

@@ -36,7 +36,7 @@ const Alert: React.FC<BaseAlertProps> = (
     children
   }) => {
 
-  const customCloseP = customClose
+  const customCloseP = customClose || '关闭'
   const classes = classnames('alert', {
     [`alert-${type}`]: type
   });
@@ -50,11 +50,13 @@ const Alert: React.FC<BaseAlertProps> = (
 
   const [visible, setVisible] = useState(true);
   return (
-    <div className={classes}>
-      {title ? <h4 className="alert-title">{title}</h4> : null}
-      <p className="alert-message">{children}</p>
-      {closable ? <i onClick={handleClick}>{customCloseP}</i> : null}
-    </div>
+    visible ?
+      <div className={classes}>
+        {title ? <h4 className="alert-title">{title}</h4> : null}
+        <p className="alert-message">{children}</p>
+        {closable ? <i onClick={handleClick}>{customCloseP}</i> : null}
+      </div>
+    : null
   );
 }
 
