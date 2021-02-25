@@ -4,7 +4,7 @@ import classNames from 'classnames'
 export type MenuMode = 'horizontal' | 'vertical';
 type SelectCallback = (selectedIndex: number) => void;
 
-interface MenuProps {
+export interface MenuProps {
   defaultIndex?: number;
   className?: string;
   mode?: MenuMode;
@@ -45,6 +45,7 @@ const Menu: FC<MenuProps> = (props) => {
     <ul
       className={classes}
       style={style}
+      data-testid="test-menu"
     >
       <MenuContext.Provider value={passedContent}>
         {children}
