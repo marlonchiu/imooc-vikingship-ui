@@ -6,7 +6,7 @@ import SubMenu from '../components/Menu/subMenu'
 function MenuDemo() {
   return (
     <>
-      <Menu defaultIndex={0} mode="vertical" onSelect={(index) => { alert(index) }}>
+      <Menu defaultIndex='0' mode="vertical" onSelect={(index) => { alert(index) }}>
         <MenuItem>title one</MenuItem>
         <MenuItem disabled>disabled link</MenuItem>
         <MenuItem>
