@@ -6,7 +6,7 @@ function MenuDemo() {
   return (
     <>
       <Menu defaultIndex={0} mode="vertical" onSelect={(index) => { alert(index) }}>
-        <MenuItem index={0}>title one</MenuItem>
+        <MenuItem>title one</MenuItem>
         <MenuItem index={1} disabled>disabled link</MenuItem>
         <MenuItem index={2}>
           <a href="http://www.baidu.com">Baidu!</a>
