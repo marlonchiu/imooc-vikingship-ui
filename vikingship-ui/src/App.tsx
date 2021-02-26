@@ -7,8 +7,8 @@ function App() {
   return (
     <div className="App">
       <MenuDemo />
-      <ButtonDemo />
-      <AlertDemo />
+      {/* <ButtonDemo /> */}
+      {/* <AlertDemo /> */}
     </div>
   )
 }

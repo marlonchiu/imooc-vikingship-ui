@@ -16,7 +16,7 @@ const MenuItem: FC<MenuItemProps> = (props) => {
 
   const classes = classNames('menu-item', className, {
     'is-disabled': disabled,
-    'is-active': context.activeIndex === index
+    'is-active': context.index === index
   })
 
   const handleClick = () => {

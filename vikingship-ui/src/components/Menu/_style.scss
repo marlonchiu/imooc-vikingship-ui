@@ -25,6 +25,52 @@
       border-bottom: $menu-item-active-border-width solid $menu-item-active-color;
     }
   }
+  .submenu-item {
+    position: relative;
+    .submenu-title {
+      display: flex;
+      align-items: center;
+    }
+    .arrow-icon {
+      transition: transform 0.25s ease-in-out;
+      margin-left: 3px;
+    }
+    &:hover {
+      .arrow-icon {
+        transform: rotate(180deg);
+      }
+    }
+  }
+  .is-vertical {
+    .arrow-icon {
+      transform: rotate(0deg) !important;
+    }
+  }
+  .is-vertical.is-opened {
+    .arrow-icon {
+      transform: rotate(180deg) !important;
+    }
+  }
+  .viking-submenu {
+    //display: none;
+    list-style: none;
+    padding-left: 0;
+    white-space: nowrap;
+    //transition: $menu-transition;
+    .menu-item {
+      padding: $menu-item-padding-y $menu-item-padding-x;
+      cursor: pointer;
+      transition: $menu-transition;
+      color: $body-color;
+      &.is-active,
+      &:hover {
+        color: $menu-item-active-color !important;
+      }
+    }
+  }
+  .viking-submenu.menu-opened {
+    //display: block;
+  }
 }
 
 .menu-horizontal {

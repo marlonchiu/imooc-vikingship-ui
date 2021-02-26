@@ -1,18 +1,27 @@
 import React from 'react'
 import Menu, { MenuMode } from '../components/Menu/menu'
 import MenuItem from '../components/Menu/menuItem'
+import SubMenu from '../components/Menu/subMenu'
 
 function MenuDemo() {
   return (
     <>
       <Menu defaultIndex={0} mode="vertical" onSelect={(index) => { alert(index) }}>
         <MenuItem>title one</MenuItem>
-        <MenuItem index={1} disabled>disabled link</MenuItem>
-        <MenuItem index={2}>
+        <MenuItem disabled>disabled link</MenuItem>
+        <MenuItem>
           <a href="http://www.baidu.com">Baidu!</a>
         </MenuItem>
-        <MenuItem index={3}>
-          cool
+        <SubMenu title='dropdown'>
+          <MenuItem>
+            dropdown 1
+          </MenuItem>
+          <MenuItem>
+            dropdown 2
+          </MenuItem>
+        </SubMenu>
+        <MenuItem>
+          cool link 3
         </MenuItem>
       </Menu>
     </>
