@@ -1,5 +1,5 @@
-import React from "react";
-import Alert, { AlertType } from "../components/Alert/alert"
+import React from 'react'
+import Alert from '../components/Alert/alert'
 
 
 function AlertDemo() {
