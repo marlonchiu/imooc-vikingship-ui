@@ -1,12 +1,14 @@
 import React, { useState } from 'react'
 import classnames from 'classnames'
 
-export enum AlertType {
-  Success = 'success',
-  Primary = 'primary',
-  Warning = 'warning',
-  Danger = 'danger'
-}
+export type AlertType = 'success' | 'primary' | 'warning' | 'danger'
+
+// export enum AlertType {
+//   Success = 'success',
+//   Primary = 'primary',
+//   Warning = 'warning',
+//   Danger = 'danger'
+// }
 
 export interface BaseAlertProps {
   /** the title */
@@ -30,7 +32,7 @@ const Alert: React.FC<BaseAlertProps> = (
   {
     title,
     closable = true,
-    type = AlertType.Primary,
+    type = 'primary',
     customClose,
     onClose,
     children
@@ -60,4 +62,7 @@ const Alert: React.FC<BaseAlertProps> = (
   );
 }
 
+Alert.defaultProps = {
+  type: 'primary'
+}
 export default Alert

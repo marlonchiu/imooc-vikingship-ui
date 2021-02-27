@@ -6,21 +6,17 @@ function AlertDemo() {
   return (
     <>
       <hr />
-      <Alert title="提示标题欧亲" type={AlertType.Primary}>this is a long description!</Alert>
+      <Alert title="提示标题欧亲" type='primary'>this is a long description!</Alert>
       <hr/>
-      <Alert type={AlertType.Primary}>this is a long description!</Alert>
+      <Alert type='primary'>this is a long description!</Alert>
       <hr/>
-      <Alert title="提示标题欧亲" type={AlertType.Success}>this is a long description!</Alert>
+      <Alert title="提示标题欧亲" type='success'>this is a long description!</Alert>
       <hr/>
-      <Alert type={AlertType.Success}>this is a long description!</Alert>
+      <Alert type='success'>this is a long description!</Alert>
       <hr/>
-      <Alert title="提示标题欧亲" type={AlertType.Danger}>this is a long description!</Alert>
+      <Alert title="提示标题欧亲" type='warning'>this is a long description!</Alert>
       <hr/>
-      <Alert type={AlertType.Danger}>this is a long description!</Alert>
-      <hr/>
-      <Alert title="提示标题欧亲" type={AlertType.Warning}>this is a long description!</Alert>
-      <hr/>
-      <Alert type={AlertType.Warning}>this is a long description!</Alert>
+      <Alert type='warning'>this is a long description!</Alert>
     </>
   )
 }

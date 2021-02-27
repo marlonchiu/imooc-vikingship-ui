@@ -11,7 +11,7 @@ function App() {
       <IconDemo />
       {/* <TabsDemo /> */}
       <MenuDemo />
-      {/* <ButtonDemo /> */}
+      <ButtonDemo />
       <AlertDemo />
     </div>
   )
