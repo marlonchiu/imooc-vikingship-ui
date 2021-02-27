@@ -1,11 +1,9 @@
 import React from 'react'
-import Alert from '../components/Alert/alert'
-
+import Alert from '../components/Alert'
 
 function AlertDemo() {
   return (
     <>
-      <hr />
       <Alert title="提示标题欧亲" type='primary'>this is a long description!</Alert>
       <hr/>
       <Alert type='primary'>this is a long description!</Alert>

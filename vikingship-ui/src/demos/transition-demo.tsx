@@ -1,8 +1,4 @@
 import React, { useState } from 'react'
-
-import Menu from '../components/Menu/menu'
-import MenuItem from '../components/Menu/menuItem'
-import SubMenu from '../components/Menu/subMenu'
 import Transition from '../components/Transition'
 import Button from '../components/Button'
 

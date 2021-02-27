@@ -1,9 +1,9 @@
 import React from 'react'
 import { render, fireEvent, waitFor } from '@testing-library/react'
-import Alert, { BaseAlertProps } from './alert'
+import Alert, { AlertProps } from './alert'
 
 
-const testAlertProp: BaseAlertProps = {
+const testAlertProp: AlertProps = {
   title: 'testAlert',
   closable: true,
   customClose: '关闭',
@@ -11,7 +11,7 @@ const testAlertProp: BaseAlertProps = {
 }
 
 
-const testSuccessAlertProp: BaseAlertProps = {
+const testSuccessAlertProp: AlertProps = {
   closable: true,
   customClose: '关闭',
   type: 'success'
