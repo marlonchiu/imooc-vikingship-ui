@@ -11,7 +11,8 @@ function IconDemo() {
   return (
     <>
       <Icon theme="primary" icon="coffee" size="6x"/>
-      <Icon theme="primary" icon="arrow-down" size="2x"/>
+      <Icon theme="danger" icon="arrow-down" size="2x"/>
+      <Icon theme="success" icon="angle-down" size="lg"/>
     </>
   )
 }
