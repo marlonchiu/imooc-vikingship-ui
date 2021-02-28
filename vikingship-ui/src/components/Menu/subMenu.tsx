@@ -6,12 +6,15 @@ import Icon from '../Icon'
 import Transition from '../Transition'
 
 export interface SubMenuProps {
+  /**  */
   index?: string;
+  /** 	下拉菜单选项的文字 */
   title: string;
+  /** 下拉菜单选型的扩展类名 */
   className?: string;
 }
 
-const SubMenu: FC<SubMenuProps> = (props) => {
+export const SubMenu: FC<SubMenuProps> = (props) => {
   const context = useContext(MenuContext)
   const { index, title, children, className } = props
   const openedSubMenus = context.defaultOpenSubMenus as Array<string>

@@ -3,27 +3,32 @@ import classnames from 'classnames'
 import Icon from '../Icon'
 import Transition from '../Transition'
 
-export type AlertType = 'success' | 'primary' | 'warning' | 'danger'
+export type AlertType = 'success' | 'primary' | 'warning' | 'danger' | 'default'
 
 export interface AlertProps {
-  /** the title */
+  /** 标题 */
   title?: string;
-  /** whether this alert can close. */
+  /** 是否显示关闭图标 */
   closable?: boolean;
   /** the close icon */
   customClose?: string;
-  /** onClose action */
+  /** 关闭alert时触发的事件 */
   onClose?: (() => void);
-  /** the description of this alert */
+  /** 描述 */
   children?: React.ReactNode;
-  /** alert type */
+  /** 	类型 四种可选 针对四种不同的场景 */
   type: AlertType;
 }
 
 /**
- * This is an alert component. It can have multiple props like title, type, closeable,customClose.
+ * 用于页面中展示重要的提示信息。 点击右侧的叉提示自动消失
+ * ### 引用方法
+ *
+ * ~~~js
+ * import { Alert } from 'vikingship'
+ * ~~~
  */
-const Alert: React.FC<AlertProps> = (props) => {
+export const Alert: React.FC<AlertProps> = (props) => {
   const { title, closable, type, customClose, onClose, children } = props
 
   const customCloseP = customClose || <Icon icon="times" className="window-close" size='lg'/>
