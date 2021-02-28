@@ -1,7 +1,7 @@
 // 配置全局的修饰器
 import React from 'react'
 import { withInfo } from '@storybook/addon-info'
-import { addDecorator, addParameters } from '@storybook/react'
+import { configure, addDecorator, addParameters } from '@storybook/react'
 // 引入样式文件
 import '../src/styles/index.scss'
 
@@ -11,6 +11,7 @@ export const parameters = {
 
 const wrapperStyle: React.CSSProperties = {
   padding: '20px 40px',
+  // width: '500px'
   // background: 'pink'
 }
 // 定义内容居中的组件
@@ -32,3 +33,13 @@ addParameters({
     header: false // 不显示头部，比较好看
   }
 })
+
+const loaderFn = () => {
+  const allExports = [require('../src/welcome.stories.tsx'), require('../src/Introduction.stories.mdx')]
+  const req = require.context('../src/components', true, /\.stories\.tsx$/)
+  req.keys().forEach(file => allExports.push(req(file)))
+  return allExports
+}
+
+// automatically import all files ending in *.stories.tsx
+configure(loaderFn, module)
