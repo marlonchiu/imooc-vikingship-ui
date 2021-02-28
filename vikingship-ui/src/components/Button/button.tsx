@@ -38,7 +38,7 @@ export type ButtonProps = Partial<NativeButtonProps & AnchorButtonProps>
  * import { Button } from 'vikingship'
  * ~~~
  */
-const Button: FC<ButtonProps> = (props) => {
+export const Button: FC<ButtonProps> = (props) => {
   const { btnType, disabled, size, children, className, href, ...restProps } = props
   // btn, btn-lg, btn-primary
   const classes = classNames('btn', className, {
@@ -75,4 +75,4 @@ Button.defaultProps = {
   btnType: 'default'
 }
 
-export default Button
+export default Button;
