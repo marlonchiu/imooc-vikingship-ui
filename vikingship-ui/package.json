@@ -38,6 +38,7 @@
   "devDependencies": {
     "@storybook/addon-actions": "^6.1.20",
     "@storybook/addon-essentials": "^6.1.20",
+    "@storybook/addon-info": "^5.3.21",
     "@storybook/addon-links": "^6.1.20",
     "@storybook/node-logger": "^6.1.20",
     "@storybook/preset-create-react-app": "^3.1.6",
@@ -51,6 +52,7 @@
     "@types/react": "^17.0.0",
     "@types/react-dom": "^17.0.0",
     "@types/react-transition-group": "^4.4.1",
+    "@types/storybook__addon-info": "^5.2.3",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-scripts": "4.0.2",
