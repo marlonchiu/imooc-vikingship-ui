@@ -21,7 +21,7 @@ const testProps2: AutoCompleteProps = {
   fetchSuggestions: (query) => {return testArray.filter(item => item.value.includes(query))},
   onSelect: jest.fn(),
   placeholder: 'auto-completed',
-  renderOption: (item: DataSourceType<{number: number}>) => <span>{item.value} - {item.number}</span>
+  renderOption: (item: DataSourceType<{number?: number}>) => <span>{item.value} - {item.number}</span>
 }
 
 let wrapper: RenderResult, inputNode: HTMLInputElement

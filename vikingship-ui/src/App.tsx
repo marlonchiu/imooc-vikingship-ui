@@ -5,16 +5,18 @@ import MenuDemo from './demos/menu-demo'
 import TabsDemo from './demos/tabs-demo'
 import IconDemo from './demos/icon-demo'
 import TransitionDemo from './demos/transition-demo'
+import InputDemo from './demos/input-demo'
 
 function App() {
   return (
     <div className="App">
-      <TransitionDemo />
-      <IconDemo />
+      <InputDemo />
+      {/* <TransitionDemo /> */}
+      {/* <IconDemo /> */}
       {/* <TabsDemo /> */}
-      <MenuDemo />
-      <ButtonDemo />
-      <AlertDemo />
+      {/* <MenuDemo /> */}
+      {/* <ButtonDemo /> */}
+      {/* <AlertDemo /> */}
     </div>
   )
 }
