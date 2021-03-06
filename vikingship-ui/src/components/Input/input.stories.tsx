@@ -5,7 +5,7 @@ import { Input } from './input'
 
 // 受控组件
 const ControlledInput = () => {
-  const [value, setValue] = useState()
+  const [value, setValue] = useState('')
   return <Input value={value} defaultValue={value} onChange={(e) => { setValue(e.target.value) }} />
 }
 
