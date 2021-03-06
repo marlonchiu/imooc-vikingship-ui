@@ -50,8 +50,8 @@ const SimpleComplete = () => {
     return (
       <>
         <h2>Name: {itemWithGithub.value}</h2>
-        <p>url: {itemWithGithub.url}</p>
-        <p>avatar_url: {itemWithGithub.avatar_url}</p>
+        {/* <p>url: {itemWithGithub.url}</p> */}
+        {/* <p>avatar_url: {itemWithGithub.avatar_url}</p> */}
       </>
     )
   }
