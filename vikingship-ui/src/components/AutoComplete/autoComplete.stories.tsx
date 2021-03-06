@@ -45,21 +45,21 @@ const SimpleComplete = () => {
       })
   }
 
-  const renderOption = (item: DataSourceType) => {
-    const itemWithGithub = item as DataSourceType<GithubUserProps>
-    return (
-      <>
-        <h2>Name: {itemWithGithub.value}</h2>
-        {/* <p>url: {itemWithGithub.url}</p> */}
-        {/* <p>avatar_url: {itemWithGithub.avatar_url}</p> */}
-      </>
-    )
-  }
+  // const renderOption = (item: DataSourceType) => {
+  //   const itemWithGithub = item as DataSourceType<GithubUserProps>
+  //   return (
+  //     <>
+  //       <h2>Name: {itemWithGithub.value}</h2>
+  //       {/* <p>url: {itemWithGithub.url}</p> */}
+  //       {/* <p>avatar_url: {itemWithGithub.avatar_url}</p> */}
+  //     </>
+  //   )
+  // }
   return (
     <AutoComplete
       fetchSuggestions={handleFetch}
       onSelect={action('selected')}
-      renderOption={renderOption}
+      // renderOption={renderOption}
     />
   )
 }
