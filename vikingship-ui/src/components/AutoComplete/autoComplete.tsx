@@ -19,7 +19,14 @@ export interface AutoCompleteProps extends Omit<InputProps, 'onSelect'> {
   renderOption?: (item: DataSourceType) => ReactElement;
 }
 
-
+/**
+ * 页面中最常用的的输入框元素，适合于完成特定的交互
+ * ### 引用方法
+ *
+ * ~~~js
+ * import { AutoComplete } from 'vikingship-ui'
+ * ~~~
+ */
 export const AutoComplete: FC<AutoCompleteProps> = (props) => {
   const {
     fetchSuggestions,
