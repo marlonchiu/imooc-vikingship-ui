@@ -13,17 +13,17 @@ import { Upload } from './upload'
 // }
 
 // 上传前 改变文件名 返回 promise
-const filePromise = (file: File) => {
-  const newFile = new File([file], 'new_name.docx', {type: file.type})
-  return Promise.resolve(newFile)
-}
+// const filePromise = (file: File) => {
+//   const newFile = new File([file], 'new_name.docx', {type: file.type})
+//   return Promise.resolve(newFile)
+// }
 
 const SimpleUpload = () => {
   return (
     <Upload
       action="https://www.mocky.io/v2/5cc8019d300000980a055e76"
       onChange={action('changed')}
-      beforeUpload={filePromise}
+      // beforeUpload={filePromise}
     >
     </Upload>
   )
