@@ -7,6 +7,7 @@ import TabsDemo from './demos/tabs-demo'
 import IconDemo from './demos/icon-demo'
 import TransitionDemo from './demos/transition-demo'
 import InputDemo from './demos/input-demo'
+import UploadDemo from './demos/upload-demo'
 
 function App() {
   const [title, setTitle] = useState('')
@@ -19,7 +20,8 @@ function App() {
   return (
     <div className="App">
       {title}
-      <InputDemo />
+      <UploadDemo />
+      {/* <InputDemo /> */}
       {/* <TransitionDemo /> */}
       {/* <IconDemo /> */}
       {/* <TabsDemo /> */}
