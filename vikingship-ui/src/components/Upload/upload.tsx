@@ -1,10 +1,9 @@
 import React, { FC, useRef, ChangeEvent, useState } from 'react'
 import axios from 'axios'
 import UploadList from './uploadList'
-import Button from '../Button'
+import Dragger from './dragger'
 
 export type UploadFileStatus = 'ready' | 'uploading' | 'success' | 'error'
-
 export interface UploadFile {
   uid: string;
   size: number;
@@ -36,6 +35,7 @@ export interface UploadProps {
   // accept 限定约束文件的类型
   accept?: string;
   multiple?: boolean;
+  drag?: boolean;
 }
 
 export const Upload: FC<UploadProps> = (props) => {
@@ -54,6 +54,8 @@ export const Upload: FC<UploadProps> = (props) => {
     withCredentials,
     accept,
     multiple,
+    children,
+    drag
   } = props
 
   const fileInput = useRef<HTMLInputElement>(null)
@@ -172,16 +174,28 @@ export const Upload: FC<UploadProps> = (props) => {
 
   return (
     <div className="viking-upload-component">
-      <Button btnType="primary" onClick={handleClick}>Upload File</Button>
-      <input
-        className="viking-file-input"
-        style={{display: 'none'}}
-        ref={fileInput}
-        onChange={handleFileChange}
-        type="file"
-        accept={accept}
-        multiple={multiple}
-      />
+      <div
+        className="viking-upload-input"
+        style={{display: 'inline-block'}}
+        onClick={handleClick}
+      >
+          {drag ?
+            <Dragger onFile={(files) => {uploadFiles(files)}}>
+              {children}
+            </Dragger> :
+            children
+          }
+        <input
+          className="viking-file-input"
+          style={{display: 'none'}}
+          ref={fileInput}
+          onChange={handleFileChange}
+          type="file"
+          accept={accept}
+          multiple={multiple}
+        />
+      </div>
+
       <UploadList
         fileList={fileList}
         onRemove={handleRemove}

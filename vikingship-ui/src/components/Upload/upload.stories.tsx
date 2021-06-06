@@ -2,7 +2,8 @@ import React  from 'react'
 import { storiesOf } from '@storybook/react'
 import { action } from '@storybook/addon-actions'
 import { Upload, UploadFile } from './upload'
-
+// import Button from '../Button/button'
+import Icon from '../Icon/icon'
 // 上传前检测文件大小  直接返回布尔值
 // const checkFileSize = (file: File) => {
 //   if (Math.round(file.size / 1024) > 50) {
@@ -35,9 +36,13 @@ const SimpleUpload = () => {
       // name="fileName"
       // data={{ 'key': 'value' }}
       // headers={{'X-Powered-By': 'vikingship'}}
-      accept=".jpg"
-      multiple
+      // accept=".jpg"
+      // multiple
+      drag
     >
+      <Icon icon="upload" size="5x" theme="secondary" />
+      <br/>
+      <p>Drag file over to upload</p>
     </Upload>
   )
 }
