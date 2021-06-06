@@ -1,0 +1,23 @@
+.viking-upload-list {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.viking-uploader-dragger {
+  background: $gray-100;
+  border: 1px dashed $gray-300;
+  border-radius: 4px;
+  cursor: pointer;
+  padding: 20px;
+  width: 360px;
+  height: 180px;
+  text-align: center;
+  &:hover {
+    border: 1px dashed $primary;
+  }
+  &.is-dragover {
+    border: 2px dashed $primary;
+    background: rgba($primary, 0.2);
+  }
+}
