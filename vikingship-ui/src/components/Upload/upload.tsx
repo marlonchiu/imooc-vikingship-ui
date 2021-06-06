@@ -15,26 +15,51 @@ export interface UploadFile {
   error?: any;
 }
 
+/**
+ * 通过点击或者拖拽上传文件
+ * ### 引用方法
+ *
+ * ~~~js
+ * import { Upload} from 'vikingship-ui'
+ * ~~~
+ */
 export interface UploadProps {
+  /** 发送请求地址 */
   action: string;
+  /** 文件列表 */
   defaultFileList?: UploadFile[];
-  beforeUpload? : (file: File) => boolean | Promise<File>;
+  /**
+   * 上传文件之前验证或进行转换
+   * @param file
+   */
+  beforeUpload?: (file: File) => boolean | Promise<File>;
+  /** 上传过程的事件 */
   onProgress?: (percentage: number, file: File) => void;
+  /** 上传成功的事件 */
   onSuccess?: (data: any, file: File) => void;
+  /** 上传失败的事件 */
   onError?: (err: any, file: File) => void;
+  /** 上传行为改变 */
   onChange?: (file: File) => void;
+  /** 移除上传的文件 */
   onRemove?: (file: UploadFile) => void;
-  // 添加自定义 header
+  /** 添加自定义 header */
   headers?: { [key: string]: any };
   // 添加name 属性 - 代表发到后台的文件参数名称
+  /** 文件名 */
   name?: string;
   // 添加data属性 - 上传所需的额外参数
+  /** 添加data属性 - 上传所需的额外参数 */
   data?: { [key: string]: any };
+  /** 是否携带请求参数 */
   withCredentials?: boolean;
   // 添加input本身的file约束属性 multiple accept等
   // accept 限定约束文件的类型
+  /** 可接受上传文件的类型 */
   accept?: string;
+  /** 允许上传多个文件 */
   multiple?: boolean;
+  /** 是否拖动上传 */
   drag?: boolean;
 }
 
