@@ -25,6 +25,17 @@ export interface UploadProps {
   onError?: (err: any, file: File) => void;
   onChange?: (file: File) => void;
   onRemove?: (file: UploadFile) => void;
+  // 添加自定义 header
+  headers?: { [key: string]: any };
+  // 添加name 属性 - 代表发到后台的文件参数名称
+  name?: string;
+  // 添加data属性 - 上传所需的额外参数
+  data?: { [key: string]: any };
+  withCredentials?: boolean;
+  // 添加input本身的file约束属性 multiple accept等
+  // accept 限定约束文件的类型
+  accept?: string;
+  multiple?: boolean;
 }
 
 export const Upload: FC<UploadProps> = (props) => {
@@ -36,7 +47,13 @@ export const Upload: FC<UploadProps> = (props) => {
     onSuccess,
     onError,
     onChange,
-    onRemove
+    onRemove,
+    headers,
+    name,
+    data,
+    withCredentials,
+    accept,
+    multiple,
   } = props
 
   const fileInput = useRef<HTMLInputElement>(null)
@@ -111,40 +128,45 @@ export const Upload: FC<UploadProps> = (props) => {
       return [_file, ...prevList]
     })
     const formData = new FormData()
-      formData.append(file.name, file)
-      axios.post(action, formData, {
-        headers: {
-          'Content-Type': 'multipart/form-data'
-        },
-        // 上传进度计算
-        onUploadProgress: (e) => {
-          let percentage = Math.round((e.loaded * 100) / e.total) || 0
-          if (percentage < 100) {
-            updateFileList(_file, { percent: percentage, status: 'uploading' })
-            if (onProgress) {
-              onProgress(percentage, file)
-            }
+    formData.append(name || 'file', file)
+    if (data) {
+      Object.keys(data).forEach(key => {
+        formData.append(key, data[key])
+      })
+    }
+    axios.post(action, formData, {
+      headers: {
+        ...headers,
+        'Content-Type': 'multipart/form-data'
+      },
+      withCredentials,
+      // 上传进度计算
+      onUploadProgress: (e) => {
+        let percentage = Math.round((e.loaded * 100) / e.total) || 0
+        if (percentage < 100) {
+          updateFileList(_file, { percent: percentage, status: 'uploading' })
+          if (onProgress) {
+            onProgress(percentage, file)
           }
         }
-      }).then(resp => {
-        updateFileList(_file, {status: 'success', response: resp.data})
-        if (onSuccess) {
-          onSuccess(resp.data, file)
-        }
-        if (onChange) {
-          onChange(file)
-        }
-      }).catch(err => {
-        updateFileList(_file, { status: 'error', error: err})
-        if (onError) {
-          onError(err, file)
-        }
-        if (onChange) {
-          onChange(file)
-        }
-      })
-
-    console.log(fileList)
+      }
+    }).then(resp => {
+      updateFileList(_file, {status: 'success', response: resp.data})
+      if (onSuccess) {
+        onSuccess(resp.data, file)
+      }
+      if (onChange) {
+        onChange(file)
+      }
+    }).catch(err => {
+      updateFileList(_file, { status: 'error', error: err})
+      if (onError) {
+        onError(err, file)
+      }
+      if (onChange) {
+        onChange(file)
+      }
+    })
   }
 
 
@@ -157,6 +179,8 @@ export const Upload: FC<UploadProps> = (props) => {
         ref={fileInput}
         onChange={handleFileChange}
         type="file"
+        accept={accept}
+        multiple={multiple}
       />
       <UploadList
         fileList={fileList}
