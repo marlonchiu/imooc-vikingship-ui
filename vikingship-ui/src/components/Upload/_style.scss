@@ -21,3 +21,55 @@
     background: rgba($primary, 0.2);
   }
 }
+
+.viking-upload-list-item {
+  transition: all 0.5s cubic-bezier(0.55, 0, 0.1, 1);
+  font-size: 14px;
+  line-height: 1.8;
+  margin-top: 5px;
+  box-sizing: border-box;
+  border-radius: 4px;
+  min-width: 200px;
+  position: relative;
+  &:first-child {
+    margin-top: 10px;
+  }
+  .file-name {
+    margin-left: 5px;
+    margin-right: 40px;
+    svg {
+      margin-right: 5px;
+      color: $gray-500;
+    }
+  }
+  .file-name-error {
+    color: $danger;
+    svg {
+      color: $danger;
+    }
+  }
+  .file-status {
+    display: block;
+    position: absolute;
+    right: 5px;
+    top: 0;
+    line-height: inherit;
+  }
+  .file-actions {
+    display: none;
+    position: absolute;
+    right: 7px;
+    top: 0;
+    line-height: inherit;
+    cursor: pointer;
+  }
+  &:hover {
+    background-color: $gray-200;
+    .file-status {
+      display: none;
+    }
+    .file-actions {
+      display: block;
+    }
+  }
+}
