@@ -11,7 +11,7 @@
   "include": [
     "src/components",
     "src/styles",
-    "index.tsx"
+    "src/index.tsx"
   ],
   "exclude": [
     "src/**/*.stories.tsx",

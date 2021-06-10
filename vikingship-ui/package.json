@@ -12,10 +12,13 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "clean": "rimraf ./build",
+    "lint": "eslint --ext js,ts,tsx src --max-warnings 10",
+    "build": "npm run clean && npm run build-ts && npm run build-css",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "build-ts": "tsc -p tsconfig.build.json",
+    "build-css": "node-sass ./src/styles/index.scss ./build/index.css",
     "storybook": "start-storybook -p 6006 -s public",
     "build-storybook": "build-storybook -s public"
   },
@@ -55,6 +58,7 @@
     "@types/react-dom": "^17.0.0",
     "@types/react-transition-group": "^4.4.1",
     "@types/storybook__addon-info": "^5.2.3",
+    "node-sass": "^6.0.0",
     "react": "^17.0.1",
     "react-docgen-typescript-loader": "^3.7.2",
     "react-dom": "^17.0.1",
